@@ -1,0 +1,600 @@
+/* Risk Analysis Deep Investigation CSS - Clean Enterprise Light Theme */
+
+/* Header Selector Row */
+.risk-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.risk-tender-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.risk-tender-select {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+/* 2. Main Risk Score Hero Card - Clean Audit Scorecard */
+.risk-score-hero-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.risk-hero-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* SVG Circular Gauge */
+.gauge-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-bg-circle {
+  fill: none;
+  stroke: #E2E8F0;
+  stroke-width: 12;
+}
+
+.gauge-progress-circle {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gauge-inner-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gauge-score-value {
+  font-family: var(--font-mono);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.gauge-max-value {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.gauge-severity-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--risk-high-text);
+  text-transform: uppercase;
+  margin-top: 6px;
+  background: var(--risk-high-bg);
+  border: 1px solid var(--risk-high-border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+}
+
+/* Hero Right Details */
+.risk-hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.risk-hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.risk-hero-contract-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.risk-hero-vendor {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 3px;
+}
+
+/* Decomposition Triad */
+.risk-triad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.risk-triad-item {
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.risk-triad-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.risk-triad-number {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.risk-triad-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* AI Alert Banner */
+.risk-hero-ai-banner {
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--primary-blue);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+/* 3. "Why Was This Flagged?" Section */
+.why-flagged-section {
+  margin-bottom: 2rem;
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-heading-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.anomaly-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
+}
+
+.anomaly-factor-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  border-left-width: 3px;
+}
+
+.anomaly-factor-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: var(--shadow-md);
+}
+
+.anomaly-factor-card.factor-severity-Critical,
+.anomaly-factor-card.factor-severity-High {
+  border-left-color: var(--risk-high);
+}
+
+.anomaly-factor-card.factor-severity-Moderate {
+  border-left-color: var(--risk-med);
+}
+
+.factor-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.factor-icon-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.factor-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+.factor-icon-box.icon-Critical,
+.factor-icon-box.icon-High {
+  background: var(--risk-high-bg);
+  border-color: var(--risk-high-border);
+  color: var(--risk-high-text);
+}
+
+.factor-icon-box.icon-Moderate {
+  background: var(--risk-med-bg);
+  border-color: var(--risk-med-border);
+  color: var(--risk-med-text);
+}
+
+.factor-card-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.factor-card-category {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.factor-card-explanation {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.factor-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.75rem;
+}
+
+.factor-contribution-tag {
+  color: var(--risk-high-text);
+  background: var(--risk-high-bg);
+  border: 1px solid var(--risk-high-border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.factor-score-pill {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* 4 & 5. Middle Row: Chart + AI Summary */
+.risk-middle-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Risk Breakdown Chart Box */
+.risk-chart-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+/* AI Investigation Summary Panel */
+.ai-summary-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--primary-blue);
+}
+
+.ai-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ai-summary-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-confidence-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--accent-blue-subtle);
+  color: var(--primary-blue);
+  border: 1px solid var(--accent-blue-border);
+}
+
+.ai-summary-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.ai-meta-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-app);
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* 6 & 7. Bottom Row: Tender Info + Timeline */
+.risk-bottom-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tender Info Panel */
+.tender-info-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tender-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tender-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.84rem;
+}
+
+.tender-info-row:last-child {
+  border-bottom: none;
+}
+
+.tender-info-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.tender-info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tender-info-value.mono {
+  font-family: var(--font-mono);
+}
+
+/* Investigation Timeline */
+.timeline-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-track-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 0.85rem;
+}
+
+.timeline-track-list::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 5px;
+  width: 2px;
+  background: var(--border-default);
+}
+
+.timeline-track-item {
+  position: relative;
+  padding-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.timeline-track-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-track-node {
+  position: absolute;
+  left: -1.5rem;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--border-bright);
+}
+
+.timeline-track-node.node-completed {
+  border-color: var(--primary-blue);
+  background: var(--primary-blue);
+}
+
+.timeline-track-node.node-alert {
+  border-color: var(--risk-high);
+  background: var(--risk-high);
+}
+
+.timeline-track-node.node-action {
+  border-color: var(--risk-med);
+  background: var(--risk-med);
+}
+
+.timeline-item-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.timeline-item-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.timeline-item-timestamp {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.timeline-item-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* 8. Action Buttons Bar */
+.risk-action-bar {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.15rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.risk-action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .risk-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .anomaly-factors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-middle-grid,
+  .risk-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .risk-triad-grid {
+    grid-template-columns: 1fr;
+  }
+}

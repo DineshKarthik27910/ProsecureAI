@@ -1,0 +1,160 @@
+# ==============================================================================
+# ProcureAI - Project Root Git Ignore Configuration
+#
+# Pushes only runnable frontend/ and backend/ application code.
+# Preserves all legitimate source code, routes, services, data sources, configs.
+# Excludes generated, local, secret, dependency, cache, and unnecessary files.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Dependencies
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+
+# ------------------------------------------------------------------------------
+# Python Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# Python Cache & Compiled Files
+# ------------------------------------------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python test & linter caches
+.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# Build & Distribution Artifacts
+# ------------------------------------------------------------------------------
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+build/
+**/build/
+
+# ------------------------------------------------------------------------------
+# Environment Variables & Secrets (Keep .env.example intact)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Explicitly retain example environment configuration
+!.env.example
+!**/.env.example
+
+# ------------------------------------------------------------------------------
+# Local Databases & SQLite Storage
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ------------------------------------------------------------------------------
+# IDE, Editor & OS Generated Files
+# ------------------------------------------------------------------------------
+.vscode/
+**/.vscode/
+.idea/
+**/.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+*.bak
+
+# ------------------------------------------------------------------------------
+# Non-Application Root-Level Files & Unnecessary Docs
+# (Preserves backend/routes/, backend/services/, etc.)
+# ------------------------------------------------------------------------------
+# Stray duplicate routes folder at project root level only (do NOT ignore backend/routes/)
+/routes/
+
+# Standalone test verification scripts outside application packages
+/test_*.py
+/tests___init__.py
+
+# Research documentation not required for runtime application
+docs/
+**/docs/
+
+# ------------------------------------------------------------------------------
+# Safeguards: Explicitly keep all required application source and assets
+# ------------------------------------------------------------------------------
+!backend/routes/
+!backend/routes/**
+!**/backend/routes/**
+!backend/services/
+!backend/services/**
+!**/backend/services/**
+!backend/data_sources/
+!backend/data_sources/**
+!**/backend/data_sources/**
+!backend/database/
+!backend/database/**
+!**/backend/database/**
+!backend/database/*.py
+!backend/*.py
+!backend/*.csv
+!backend/requirements.txt
+!frontend/src/
+!frontend/src/**
+!frontend/public/
+!frontend/public/**
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/vite.config.js
+!frontend/index.html
+!frontend/README.md
+
+# Re-affirm ignore on sensitive / generated files inside packages
+backend/database/*.db
+**/backend/database/*.db
+backend/.venv/
+**/backend/.venv/
+frontend/node_modules/
+**/frontend/node_modules/
+frontend/dist/
+**/frontend/dist/
+frontend/build/
+**/frontend/build/

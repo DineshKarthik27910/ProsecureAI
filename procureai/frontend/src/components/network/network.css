@@ -1,0 +1,494 @@
+/* Supplier Network CSS - Clean Enterprise Light Theme */
+
+/* Summary Cards Grid */
+.network-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.network-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.network-summary-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: var(--shadow-md);
+}
+
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-card-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.summary-card-value {
+  font-family: var(--font-mono);
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.summary-card-value.val-risk-high {
+  color: var(--risk-high);
+}
+.summary-card-value.val-risk-med {
+  color: var(--risk-med);
+}
+.summary-card-value.val-cyan {
+  color: var(--primary-blue);
+}
+
+.summary-card-subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Filter Bar */
+.network-filter-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.network-filter-item {
+  flex: 1;
+  min-width: 170px;
+  position: relative;
+}
+
+/* Main Layout Stage */
+.network-main-stage {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Graph Canvas Container - Clean Palantir / Analyst Notebook Look */
+.graph-canvas-box {
+  background: #F8FAFC;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  position: relative;
+  min-height: 580px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-top-bar {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.graph-top-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-default);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  pointer-events: auto;
+}
+
+.graph-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-default);
+  padding: 0.2rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  pointer-events: auto;
+}
+
+.graph-control-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.graph-control-btn:hover {
+  background: #F1F5F9;
+  color: var(--text-primary);
+}
+
+/* SVG Elements */
+.network-svg-viewport {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  user-select: none;
+  cursor: grab;
+}
+
+.network-edge-line {
+  stroke-linecap: round;
+  transition: stroke var(--transition-fast), stroke-width var(--transition-fast);
+}
+
+.network-edge-line.edge-suspicious {
+  stroke: var(--risk-high);
+  stroke-dasharray: 5 4;
+  stroke-width: 2;
+}
+
+.network-edge-line.edge-warning {
+  stroke: var(--risk-med);
+  stroke-dasharray: 4 4;
+  stroke-width: 1.8;
+}
+
+.network-edge-line.edge-normal {
+  stroke: #CBD5E1;
+  stroke-width: 1.5;
+}
+
+/* Supplier Node Circles */
+.node-circle-group {
+  cursor: pointer;
+}
+
+.node-circle-group:hover .node-inner-circle {
+  filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.45));
+}
+
+.node-inner-circle {
+  transition: stroke var(--transition-fast), fill var(--transition-fast);
+}
+
+.node-inner-circle.node-critical {
+  fill: #FEF2F2;
+  stroke: #DC2626;
+  stroke-width: 2.5;
+}
+
+.node-inner-circle.node-high {
+  fill: #FEF2F2;
+  stroke: #DC2626;
+  stroke-width: 2.2;
+}
+
+.node-inner-circle.node-moderate {
+  fill: #FFFBEB;
+  stroke: #D97706;
+  stroke-width: 2;
+}
+
+.node-inner-circle.node-low {
+  fill: #F0FDF4;
+  stroke: #16A34A;
+  stroke-width: 2;
+}
+
+.node-inner-circle.node-selected {
+  stroke: #1E40AF !important;
+  stroke-width: 3.5 !important;
+  fill: #EFF6FF !important;
+}
+
+.node-label-text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  fill: #0F172A;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.node-sub-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: #64748B;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* Graph Legend Bar */
+.graph-bottom-legend {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-default);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+/* Supplier Details Panel */
+.supplier-details-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.supplier-details-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.supplier-id-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--primary-blue);
+  background: var(--accent-blue-subtle);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-blue-border);
+  font-weight: 600;
+}
+
+.supplier-name-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+/* Supplier Mini Stat Grid */
+.supplier-stat-quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.supplier-stat-cell {
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stat-cell-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.stat-cell-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Suspicious Network Signals List */
+.signals-checklist-box {
+  background: var(--risk-high-bg);
+  border: 1px solid var(--risk-high-border);
+  border-radius: 6px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.signals-checklist-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--risk-high-text);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.signal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.775rem;
+  color: #7F1D1D;
+  line-height: 1.35;
+}
+
+.signal-item svg {
+  color: var(--risk-high);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Related Suppliers Cards */
+.related-suppliers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.related-supplier-item {
+  background: var(--bg-app);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.related-supplier-item:hover {
+  background: #F1F5F9;
+  border-color: var(--border-bright);
+}
+
+/* Secondary Row: Suspicious Connections + AI Insight */
+.network-secondary-row {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.connections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.connection-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-left-width: 3px;
+  box-shadow: var(--shadow-sm);
+}
+
+.connection-card.severity-Critical,
+.connection-card.severity-High {
+  border-left-color: var(--risk-high);
+}
+
+.connection-parties-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.connection-entities {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.connection-reason-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* AI Network Insight Card */
+.ai-network-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--primary-blue);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .network-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .network-main-stage,
+  .network-secondary-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .network-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .graph-canvas-box {
+    min-height: 440px;
+  }
+}
