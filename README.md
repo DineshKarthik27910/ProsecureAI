@@ -1,16 +1,16 @@
-ProcureAI
+**ProcureAI**
 
 AI-powered procurement risk intelligence platform for identifying suspicious tender and supplier patterns.
 
-🚨 Problem
+**🚨 Problem**
 
 Public procurement has thousands of tenders, making it difficult to manually identify unusual bidding and supplier behavior.
 
-💡 Solution
+**💡 Solution**
 
 ProcureAI analyzes procurement data using AI, rule-based detection, and supplier relationship analysis to generate a risk score from 0–100.
 
-✨ Features
+**✨ Features**
 
 📊 Procurement Dashboard
 
@@ -24,7 +24,7 @@ ProcureAI analyzes procurement data using AI, rule-based detection, and supplier
 
 📡 Live Procurement Monitoring
 
-🧠 AI / Risk Detection
+**🧠 AI / Risk Detection**
 
 Rule-based risk detection
 
@@ -34,7 +34,7 @@ Supplier relationship analysis
 
 Explainable risk scoring
 
-🛠️ Tech Stack
+**🛠️ Tech Stack**
 
 Frontend: React, Vite, Recharts
 
@@ -44,9 +44,9 @@ AI/ML: Scikit-learn, Isolation Forest
 
 Database: SQLite
 
-🚀 Run Locally
+**🚀 Run Locally**
 
-Backend
+**Backend**
 
 cd backend
 .venv\Scripts\activate
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 python -m database.init_db
 uvicorn server:app --reload --port 8000
 
-Frontend
+**Frontend**
 
 cd frontend
 npm install
@@ -62,7 +62,7 @@ npm run dev
 
 Open http://localhost:5173
 
-🎬 Demo
+**🎬 Demo**
 
 Open the dashboard
 
@@ -74,13 +74,13 @@ View its risk factors
 
 Explore the supplier network
 
-🎯 Goal
+**🎯 Goal**
 
 Find the tenders that deserve investigation first.
 
 ProcureAI is a decision-support system. A high-risk score indicates a pattern worth investigating; it does not by itself prove wrongdoing.
 
-👥 Team Members
+**👥 Team Members**
 
 J. Akshit
 
@@ -91,4 +91,3 @@ R. Dinesh Karthik
 K. Komal Karthikeyan
 
 A. Naga Sakthi Swaroop
-
